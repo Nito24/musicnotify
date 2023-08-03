@@ -55,7 +55,7 @@ def down_icon (url, artist, album):
     available_icons = listdirectory('/home/nito/.local/share/icons/temp')
 
     if (icon_name + '.jpg') not in available_icons:
-        run_cmd(f"cd /home/nito/.local/share/icons/temp/ ; wget -q {url} ; mv {name} '{icon_name}.jpg'")
+        run_cmd(f"cd /home/nito/.local/share/icons/temp/ ; wget --no-check-certificate -q {url} ; mv {name} '{icon_name}.jpg'") #--no-check-certificate isnt tested
     
     return('/home/nito/.local/share/icons/temp/' + f"{icon_name}.jpg")
 
